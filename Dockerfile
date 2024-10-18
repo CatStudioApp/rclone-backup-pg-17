@@ -18,8 +18,8 @@ ENV XDG_CONFIG_HOME=/config
 
 FROM base
 
-LABEL "repository"="https://github.com/AdrienPoupa/rclone-backup" \
-  "homepage"="https://github.com/AdrienPoupa/rclone-backup" \
+LABEL "repository"="https://github.com/RockieStar-Inc/rclone-backup-pg-17" \
+  "homepage"="https://github.com/RockieStar-Inc/rclone-backup-pg-17" \
   "maintainer"="Adrien Poupa <git@poupa.net>"
 
 ARG USER_NAME="backuptool"

@@ -19,7 +19,7 @@ docker run \
   --volumes-from=your-container \
   --mount type=volume,source=rclone-backup-data,target=/config/ \
   -e ... \
-  adrienpoupa/rclone-backup:latest backup
+  RockieStar-Inc/rclone-backup-pg-17:latest backup
 ```
 
 You also need to mount the rclone config file and set the environment variables.
@@ -32,5 +32,5 @@ The only difference is that the environment variable `CRON` does not work becaus
 
 ## IMPORTANT
 
-**Manually triggering a backup only verifies that the environment variables are configured correctly, not that CRON is working properly. This is the [issue](https://github.com/AdrienPoupa/rclone-backup/issues/53) that CRON may not work properly on ARM devices.**
+**Manually triggering a backup only verifies that the environment variables are configured correctly, not that CRON is working properly. This is the [issue](https://github.com/RockieStar-Inc/rclone-backup-pg-17/issues/53) that CRON may not work properly on ARM devices.**
 

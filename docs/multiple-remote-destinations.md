@@ -12,7 +12,7 @@ You can achieve this by setting the following environment variables.
 
 > **Don't forget to add the new Rclone remote before running with the new environment variables.**
 > 
-> Find more information on how to configure Rclone [here](https://github.com/AdrienPoupa/rclone-backup#configure-rclone-%EF%B8%8F-must-read-%EF%B8%8F).
+> Find more information on how to configure Rclone [here](https://github.com/RockieStar-Inc/rclone-backup-pg-17#configure-rclone-%EF%B8%8F-must-read-%EF%B8%8F).
 
 To set additional remote destinations, use the environment variables `RCLONE_REMOTE_NAME_N` and `RCLONE_REMOTE_DIR_N`, where:
 

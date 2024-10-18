@@ -17,7 +17,7 @@ You can use the built-in non-root user and group, named `backuptool`, with the U
 docker run --rm -it \
   --mount type=volume,source=rclone-backup-data,target=/config/ \
   --entrypoint=bash \
-  adrienpoupa/rclone-backup:latest
+  RockieStar-Inc/rclone-backup-pg-17:latest
 
 # modify the rclone config file owner in the container
 chown -R 1100:1100 /config/
@@ -35,7 +35,7 @@ exit
 docker run --rm -it \
   --mount type=volume,source=rclone-backup-data,target=/data/ \
   --entrypoint=bash \
-  adrienpoupa/rclone-backup:latest
+  RockieStar-Inc/rclone-backup-pg-17:latest
 
 # make files readable for all users in the container
 chmod -R +r /data/
@@ -51,7 +51,7 @@ exit
 docker run --rm -it \
   --volumes-from=your-container \
   --entrypoint=bash \
-  adrienpoupa/rclone-backup:latest
+  RockieStar-Inc/rclone-backup-pg-17:latest
 
 # make files readable for all users in the container
 chmod -R +r /data/
@@ -68,7 +68,7 @@ exit
 # docker-compose.yml
 services:
   backup:
-    image: adrienpoupa/rclone-backup:latest
+    image: RockieStar-Inc/rclone-backup-pg-17:latest
     user: 'backuptool:backuptool'
     ...
 ```
@@ -80,7 +80,7 @@ docker run -d \
   ...
   --user backuptool:backuptool \
   ...
-  adrienpoupa/rclone-backup:latest
+  RockieStar-Inc/rclone-backup-pg-17:latest
 ```
 
 <br>

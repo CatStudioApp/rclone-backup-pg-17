@@ -24,4 +24,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body: |
-            [CHANGELOG](https://github.com/AdrienPoupa/rclone-backup/blob/master/CHANGELOG.md)
+            [CHANGELOG](https://github.com/RockieStar-Inc/rclone-backup-pg-17/blob/master/CHANGELOG.md)

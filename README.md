@@ -1,6 +1,6 @@
 # Rclone Backup
 
-[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/adrienpoupa/rclone-backup?label=Version&logo=docker)](https://hub.docker.com/r/adrienpoupa/rclone-backup/tags) [![Docker Pulls](https://img.shields.io/docker/pulls/adrienpoupa/rclone-backup?label=Docker%20Pulls&logo=docker)](https://hub.docker.com/r/adrienpoupa/rclone-backup) [![GitHub](https://img.shields.io/github/license/adrienpoupa/rclone-backup?label=License&logo=github)](https://github.com/AdrienPoupa/rclone-backup/blob/master/LICENSE)
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/RockieStar-Inc/rclone-backup-pg-17?label=Version&logo=docker)](https://hub.docker.com/r/RockieStar-Inc/rclone-backup-pg-17/tags) [![Docker Pulls](https://img.shields.io/docker/pulls/RockieStar-Inc/rclone-backup-pg-17?label=Docker%20Pulls&logo=docker)](https://hub.docker.com/r/RockieStar-Inc/rclone-backup-pg-17) [![GitHub](https://img.shields.io/github/license/RockieStar-Inc/rclone-backup-pg-17?label=License&logo=github)](https://github.com/RockieStar-Inc/rclone-backup-pg-17/blob/master/LICENSE)
 
 Forked from [ttionya/vaultwarden-backup](https://github.com/ttionya/vaultwarden-backup).
 
@@ -33,7 +33,7 @@ You can get the token by the following command.
 ```shell
 docker run --rm -it \
   --mount type=volume,source=rclone-backup-data,target=/config/ \
-  adrienpoupa/rclone-backup:latest \
+  RockieStar-Inc/rclone-backup-pg-17:latest \
   rclone config
 ```
 
@@ -44,7 +44,7 @@ After setting, check the configuration content by the following command.
 ```shell
 docker run --rm -it \
   --mount type=volume,source=rclone-backup-data,target=/config/ \
-  adrienpoupa/rclone-backup:latest \
+  RockieStar-Inc/rclone-backup-pg-17:latest \
   rclone config show
 
 # AWS S3 Example
@@ -102,7 +102,7 @@ You can view the current remote name with the following command.
 ```shell
 docker run --rm -it \
   --mount type=volume,source=rclone-backup-data,target=/config/ \
-  adrienpoupa/rclone-backup:latest \
+  RockieStar-Inc/rclone-backup-pg-17:latest \
   rclone config show
 
 # [RcloneBackup] <- this
@@ -230,7 +230,7 @@ During testing, we will add the `-v` option to display detailed information.
 -S from=<my-email-address>
 ```
 
-Console showing warnings? Check [issue #177](https://github.com/AdrienPoupa/rclone-backup/issues/117#issuecomment-1691443179) for more details.
+Console showing warnings? Check [issue #177](https://github.com/RockieStar-Inc/rclone-backup-pg-17/issues/117#issuecomment-1691443179) for more details.
 
 #### MAIL_TO
 
@@ -292,7 +292,7 @@ If you prefer using an env file instead of environment variables, you can map th
 ```shell
 docker run -d \
   --mount type=bind,source=/path/to/env,target=/.env \
-  adrienpoupa/rclone-backup:latest
+  RockieStar-Inc/rclone-backup-pg-17:latest
 ```
 
 
@@ -303,7 +303,7 @@ As an alternative to passing sensitive information via environment variables, `_
 ```shell
 docker run -d \
   -e ZIP_PASSWORD_FILE=/run/secrets/zip-password \
-  adrienpoupa/rclone-backup:latest
+  RockieStar-Inc/rclone-backup-pg-17:latest
 ```
 
 ## About Priority
@@ -315,11 +315,11 @@ We will use the environment variables first, followed by the contents of the fil
 You can use the following command to test mail sending. Remember to replace your SMTP variables.
 
 ```shell
-docker run --rm -it -e MAIL_SMTP_VARIABLES='<your smtp variables>' adrienpoupa/rclone-backup:latest mail <mail send to>
+docker run --rm -it -e MAIL_SMTP_VARIABLES='<your smtp variables>' RockieStar-Inc/rclone-backup-pg-17:latest mail <mail send to>
 
 # Or
 
-docker run --rm -it -e MAIL_SMTP_VARIABLES='<your smtp variables>' -e MAIL_TO='<mail send to>' adrienpoupa/rclone-backup:latest mail
+docker run --rm -it -e MAIL_SMTP_VARIABLES='<your smtp variables>' -e MAIL_TO='<mail send to>' RockieStar-Inc/rclone-backup-pg-17:latest mail
 ```
 
 ## Advanced
