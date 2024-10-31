@@ -1,8 +1,8 @@
-FROM rclone/rclone:1.67.0 AS provider
+FROM rclone/rclone:1 AS provider
 
 # To address the issue of dependencies in Alpine's edge version being required while rclone is not yet updated.
 # https://github.com/rclone/rclone/blob/master/Dockerfile
-FROM alpine:latest AS base
+FROM 17-alpine AS base
 
 RUN apk --no-cache add ca-certificates fuse3 tzdata && \
   echo "user_allow_other" >> /etc/fuse.conf
@@ -31,8 +31,7 @@ COPY scripts/*.sh /app/
 
 RUN chmod +x /app/*.sh \
   && mkdir -m 777 /data/backup \
-  && apk add --no-cache 7zip bash mariadb-client postgresql17-client sqlite supercronic s-nail tzdata \
-  && apk info --no-cache -Lq mariadb-client | grep -vE '/bin/mariadb$' | grep -vE '/bin/mariadb-dump$' | xargs -I {} rm -f "/{}" \
+  && apk add --no-cache 7zip bash sqlite supercronic s-nail tzdata \
   && ln -sf "${LOCALTIME_FILE}" /etc/localtime \
   && addgroup -g "${USER_ID}" "${USER_NAME}" \
   && adduser -u "${USER_ID}" -Ds /bin/sh -G "${USER_NAME}" "${USER_NAME}"
