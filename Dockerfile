@@ -2,7 +2,7 @@ FROM rclone/rclone:1 AS provider
 
 # To address the issue of dependencies in Alpine's edge version being required while rclone is not yet updated.
 # https://github.com/rclone/rclone/blob/master/Dockerfile
-FROM 17-alpine AS base
+FROM postgres:17-alpine AS base
 
 RUN apk --no-cache add ca-certificates fuse3 tzdata && \
   echo "user_allow_other" >> /etc/fuse.conf
