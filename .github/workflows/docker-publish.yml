@@ -49,7 +49,7 @@ jobs:
           platforms: 'linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7'
           push: true
           tags: |
-            ghcr.io/rockiestar-inc/rclone-backup-pg-17:latest
+            ghcr.io/catstudioapp/rclone-backup-pg-17:latest
 
   publish-beta:
     name: Docker Publish Beta
