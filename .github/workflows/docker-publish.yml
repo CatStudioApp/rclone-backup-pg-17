@@ -50,7 +50,6 @@ jobs:
           push: true
           tags: |
             ghcr.io/rockiestar-inc/rclone-backup-pg-17:latest
-            ghcr.io/rockiestar-inc/rclone-backup-pg-17:${{ env.TAG }}
 
   publish-beta:
     name: Docker Publish Beta
